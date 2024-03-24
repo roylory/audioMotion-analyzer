@@ -131,7 +131,8 @@ const DEFAULT_SETTINGS = {
 	useCanvas      : true,
 	volume         : 1,
 	weightingFilter: FILTER_NONE,
-	width          : undefined
+	width          : undefined,
+	hideScaleX     : false,
 };
 
 // custom error messages
@@ -1586,6 +1587,9 @@ export default class AudioMotionAnalyzer {
 	 */
 	_createScales() {
 		if ( ! this._ready )
+			return;
+
+		if ( this.hideScaleX )
 			return;
 
 		const { analyzerWidth, initialX, innerRadius, scaleMin, unitWidth } = this._aux,

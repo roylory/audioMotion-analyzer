@@ -71,6 +71,7 @@ export interface Options {
   volume?: number;
   weightingFilter?: WeightingFilter;
   width?: number;
+  hideScaleX?: boolean;
 }
 
 export interface AnalyzerBarData {
